@@ -1,0 +1,167 @@
+Сделал конвертацию с помощью https://www.codeconvert.ai/csharp-to-java-converter
+
+
+Произведите корректную (правильную) по вашему мнению реализацию с применением принципа DRY:
+Использование параметризованных методов
+
+public void logError(String message) {
+    System.out.println("ERROR: " + message);
+}
+
+public void logWarning(String message) {
+    System.out.println("WARNING: " + message);
+}
+
+public void logInfo(String message) {
+    System.out.println("INFO: " + message);
+}
+
+Использование общих конфигурационных настроек
+public class DatabaseService {
+    public void connect() {
+        String connectionString = "Server=myServer;Database=myDb;User Id=myUser;Password=myPass;";
+        // Logic for connecting to the database
+    }
+}
+
+public class LoggingService {
+    public void log(String message) {
+        String connectionString = "Server=myServer;Database=myDb;User Id=myUser;Password=myPass;";
+        // Logic for writing log to the database
+    }
+}
+
+
+
+Произведите корректную (правильную) по вашему мнению реализацию с применением принципа KISS:
+Избегание ненужного вложения кода
+public void ProcessNumbers(int[] numbers)
+{
+    if (numbers != null)
+    {
+        if (numbers.Length > 0)
+        {
+            foreach (var number in numbers)
+            {
+                if (number > 0)
+                {
+                    Console.WriteLine(number);
+                }
+            }
+        }
+    }
+}
+
+Избегание ненужного использования LINQ
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public void printPositiveNumbers(int[] numbers) {
+    List<Integer> positiveNumbers = Arrays.stream(numbers)
+                                          .filter(n -> n > 0)
+                                          .sorted()
+                                          .boxed()
+                                          .collect(Collectors.toList());
+
+    for (Integer number : positiveNumbers) {
+        System.out.println(number);
+    }
+}
+
+
+Избегание избыточного использования исключений
+public int Divide(int a, int b)
+{
+    try
+    {
+        return a / b;
+    }
+    catch (DivideByZeroException)
+    {
+        return 0;
+    }
+}
+
+Произведите корректную (правильную) по вашему мнению реализацию с применением принципа YAGNI:
+Создание многофункционального класса
+
+public class User {
+    private String name;
+    private String email;
+    private String address;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void saveToDatabase() {
+        // Code to save user to database
+    }
+
+    public void sendEmail() {
+        // Code to send email to user
+    }
+
+    public void printAddressLabel() {
+        // Code to print address label
+    }
+}
+
+
+
+Добавление ненужных настроек или конфигураций
+public class FileReader
+{
+    public string ReadFile(string filePath, bool useBuffer = true, int bufferSize = 1024)
+    {
+        // Логика чтения файла с возможностью использования буфера
+        if (useBuffer)
+        {
+            // Чтение с буфером
+        }
+        else
+        {
+            // Чтение без буфера
+        }
+        return "file content";
+    }
+}
+Добавление ненужных методов и функций
+public class ReportGenerator
+{
+    public void GeneratePdfReport()
+    {
+        // Генерация PDF отчета
+    }
+
+    public void GenerateExcelReport()
+    {
+        // Генерация Excel отчета
+    }
+
+    public void GenerateHtmlReport()
+    {
+        // Генерация HTML отчета
+    }
+}
